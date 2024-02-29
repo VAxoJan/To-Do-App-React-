@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mountainMob{
+    background: url("./components/images/moun.svg");
+    background-position:center;
+    width: 100%;
+    height: 200px;
+}
+.header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.header>h1{
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+}
+.moonSvg{
+    cursor: pointer;
+}
+.middle{
+    border: 1px solid #000;
+    width: 90%;
+    height: 400px;
+    margin: -162px auto;
+    z-index: 2;
+    position: relative;
+}
+.checkBox{
+    position: absolute;
+    left: 10px;
+    top: 81px;
+}
