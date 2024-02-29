@@ -11,7 +11,8 @@ function App() {
       <div className='middle'>
          <Header/>
          <MainInputStyled/>
-         <input className='checkBox' type="checkbox"/>
+         <input className='checkBox' type="checkbox"></input>
+         {/* <h1>hello</h1> aq unda chavpusho valueebi  */}
       </div>
     </div>
   )
