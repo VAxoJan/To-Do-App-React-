@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import img from '../images/cmb.svg'
 
 const MainInput = ({ width, height, radius, border, outline, margin, padding }) => {
   const [input, setInput] = useState("");
@@ -36,10 +37,14 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
         placeholder="Create a new todo..."
       />
       {output.map((item, index) => (
-        <div key={index}>
-          <input type="checkbox" />
-          <p>{item}</p>
-          <button>X</button>
+        <div className="mainInputDiv" key={index}>
+          <div className="mainInp">
+            <div className="leftSide">
+            <input type="checkbox" />
+            <p>{item}</p>
+            </div>
+            <img style={{width:"18px",height:"18px",background:"none"}} src={img}/>
+          </div>
         </div>
       ))}
     </>

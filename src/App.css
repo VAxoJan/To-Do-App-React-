@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #ebebeb;
+}
 .mountainMob{
     background: url("./components/images/moun.svg");
     background-position:center;
@@ -22,7 +25,6 @@
     cursor: pointer;
 }
 .middle{
-    border: 1px solid #000;
     width: 90%;
     height: 400px;
     margin: -162px auto;
@@ -33,4 +35,22 @@
     position: absolute;
     left: 10px;
     top: 81px;
+}
+.mainInputDiv{
+    margin-top: 24px;
+}
+.mainInp{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-inline: 9px;
+    background-color: #ffffff;
+    box-shadow: 0px 35px 50px -15px #C2C3D680;
+    height: 40px;
+    border-radius: 10px;
+    align-items: center;
+}
+.leftSide{
+    display: flex;
+    gap: 24px;
 }
