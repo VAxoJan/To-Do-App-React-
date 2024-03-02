@@ -56,6 +56,7 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
             <div className="leftSide">
               <input type="checkbox" checked={item.completed} onChange={() => lineText(item.id)} />
               <p style={{
+                overflowX:"scroll",
                 listStyle: "none",
                 textDecoration: item.completed ? "line-through" : "none",
                 color: item.completed ? "#D1D2DA" : "black"
