@@ -5,6 +5,10 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
   const [input, setInput] = useState("");
   const [output, setOutput] = useState([]);
 
+  const deleteDiv = (item) => {
+    setOutput(prev => prev.filter(todo => todo !== item));
+  }
+
   function handleKeyDown(e) {
     if (e.key === "Enter") {
       add();
@@ -40,10 +44,10 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
         <div className="mainInputDiv" key={index}>
           <div className="mainInp">
             <div className="leftSide">
-            <input type="checkbox" />
-            <p>{item}</p>
+              <input type="checkbox" />
+              <p>{item}</p>
             </div>
-            <img style={{width:"18px",height:"18px",background:"none"}} src={img}/>
+            <img onClick={() => deleteDiv(item)} style={{ width: "18px", height: "18px", background: "none" }} src={img} alt="delete" />
           </div>
         </div>
       ))}
