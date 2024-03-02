@@ -31,7 +31,7 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
       setInput("");
     }
   }
-
+  
   return (
     <>
       <input
@@ -51,12 +51,11 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
         placeholder="Create a new todo..."
       />
       {output.map((item, index) => (
-        <div className="mainInputDiv" key={index}>
+        <div className="mainInputDiv"  key={index}>
           <div className="mainInp">
             <div className="leftSide">
               <input type="checkbox" checked={item.completed} onChange={() => lineText(item.id)} />
               <p style={{
-                overflowX:"scroll",
                 listStyle: "none",
                 textDecoration: item.completed ? "line-through" : "none",
                 color: item.completed ? "#D1D2DA" : "black"
