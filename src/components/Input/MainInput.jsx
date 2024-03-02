@@ -9,15 +9,25 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
     setOutput(prev => prev.filter(todo => todo !== item));
   }
 
-  function handleKeyDown(e) {
+  const lineText = (todo_id) => {
+    setOutput((prev) => {
+      return prev.map((item) => {
+        return item.id === todo_id 
+        ? {...item, completed: !item.completed}
+        : item;
+      });
+    });
+  }
+
+  const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       add();
     }
   }
 
-  function add() {
+  const add = () => {
     if (input.trim() !== "") {
-      setOutput((prev) => [...prev, input]);
+      setOutput((prev) => [...prev, { id: Date.now(), text: input, completed: false }]);
       setInput("");
     }
   }
@@ -44,8 +54,12 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
         <div className="mainInputDiv" key={index}>
           <div className="mainInp">
             <div className="leftSide">
-              <input type="checkbox" />
-              <p>{item}</p>
+              <input type="checkbox" checked={item.completed} onChange={() => lineText(item.id)} />
+              <p style={{
+                listStyle: "none",
+                textDecoration: item.completed ? "line-through" : "none",
+                color: item.completed ? "#D1D2DA" : "black"
+              }} >{item.text}</p>
             </div>
             <img onClick={() => deleteDiv(item)} style={{ width: "18px", height: "18px", background: "none" }} src={img} alt="delete" />
           </div>
