@@ -63,6 +63,19 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
           </div>
         </div>
       ))}
+         <div className="bottomDiv">
+          <div className="inputLeft">
+            <p>0 items</p>
+          </div>
+          <div style={{display:"flex", gap:"19px"}} className="inputBottom">
+            <p>All</p>
+            <p>Active</p>
+            <p>Completed</p>
+          </div>
+          <div className="inputRight">
+            <p>Clear completed</p>
+          </div>
+         </div>
     </>
   );
 };
