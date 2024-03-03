@@ -12,9 +12,7 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
   const lineText = (todo_id) => {
     setOutput((prev) => {
       return prev.map((item) => {
-        return item.id === todo_id 
-        ? {...item, completed: !item.completed}
-        : item;
+        return item.id === todo_id ? {...item, completed: !item.completed}: item;
       });
     });
   }
@@ -61,7 +59,7 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
                 color: item.completed ? "#D1D2DA" : "black"
               }} >{item.text}</p>
             </div>
-            <img onClick={() => deleteDiv(item)} style={{ width: "18px", height: "18px", background: "none" }} src={img} alt="delete" />
+            <img onClick={() => deleteDiv(item)} style={{ width: "18px", height: "18px", background: "none", cursor:"pointer" }} src={img} alt="delete" />
           </div>
         </div>
       ))}
