@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import MainInputStyled from './components/Input/MainInputStyled';
 import './responsive/responsive.css'
+import DarkMode from './components/DarkMode/DarkMode';
 
 function App() {
   return (
     <div className='mainMob'>
-      <img className='mountainMob'/>
+      <DarkMode/>
       <div className='middle'>
          <Header/>
          <MainInputStyled/>
@@ -16,4 +18,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
