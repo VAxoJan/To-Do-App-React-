@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
 import moon from "../images/moon.svg"
 import sun from "../images/sun.svg"
-import DarkMode from '../DarkMode/DarkMode';
+import logo1 from "../images/moun.svg";
+import logo2 from "../images/black.svg";
 
-const Header = () => {
+const Header = ({src, width}) => {
   const [dark, setDark] = useState(true);
+  const [image,setImage] = useState(true)
   const toggleDarkMode = () => {
     setDark((prev) => !prev);
+    setImage(!image)
   };
 
 
   return (
     <div className="header">
         <h1>T O D O</h1>
-        <img onClick={Event => {
-          toggleDarkMode()
-          DarkMode()
-        }} className={`${dark ? "moonLight" : "moonDark"}`} src={dark ? moon : sun}/>
+        <img onClick={toggleDarkMode} className={`${dark ? "moonLight" : "moonDark"}`} src={dark ? moon : sun}/>
     </div>
   )
 }
