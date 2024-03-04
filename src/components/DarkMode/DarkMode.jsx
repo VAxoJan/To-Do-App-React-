@@ -9,7 +9,6 @@ const DarkMode = () => {
   }
   return (
     <img
-      src={image ? "logo1" : "secondImg"}
       onClick={toggleDark}
       className={`${image ? "mountainMob" : "secondImg"}`}
     />

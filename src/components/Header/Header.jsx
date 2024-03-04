@@ -16,7 +16,8 @@ const Header = ({src, width}) => {
   return (
     <div className="header">
         <h1>T O D O</h1>
-        <img onClick={toggleDarkMode} className={`${dark ? "moonLight" : "moonDark"}`} src={dark ? moon : sun}/>
+        {/* <img onClick={toggleDarkMode} className={`${dark ? "moonLight" : "moonDark"}`} src={dark ? moon : sun}/> */}
+        <h1 style={{fontFamily:"monospace"}}>Welcome to my ToDo</h1>
     </div>
   )
 }
