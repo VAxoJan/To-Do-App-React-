@@ -7,6 +7,7 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
 
   const deleteDiv = (item) => {
     setOutput(prev => prev.filter(todo => todo !== item));
+    declare()
   }
 
   const lineText = (todo_id) => {
@@ -27,7 +28,17 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
     if (input.trim() !== "") {
       setOutput((prev) => [...prev, { id: Date.now(), text: input, completed: false }]);
       setInput("");
+      handleClick()
     }
+  }
+  const [count,setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(count + 1)
+  }
+
+  const declare = () => {
+    setCount(count - 1)
   }
   
   return (
@@ -65,7 +76,7 @@ const MainInput = ({ width, height, radius, border, outline, margin, padding }) 
       ))}
          <div className="bottomDiv">
           <div className="inputLeft">
-            <p>0 items</p>
+            <p onClick={handleClick}>{count} items</p>
           </div>
           <div style={{display:"flex", gap:"19px"}} className="inputBottom">
             <p>All</p>
